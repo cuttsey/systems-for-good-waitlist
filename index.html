@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systems for Good: join the waitlist</title>
+<meta name="description" content="Turn the problem you keep fixing into a model you can run. Join the waitlist and tell us yours.">
+<meta property="og:title" content="Steer it once. Fix it for good.">
+<meta property="og:description" content="Turn the problem you keep fixing into a model you can run. Join the waitlist.">
+<meta property="og:image" content="og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4 20h56l-5 12 5 12H4z' fill='%23ff4f1f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Trispace:wdth,wght@75..125,100..800&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/libertinus-sans@5.3.0/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/libertinus-sans@5.3.0/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/trispace@5.3.0/standard.css">
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="parts/grain-light.css">
+<style>
+.wl{min-height:100svh;display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-6);align-items:center;padding:110px var(--margin) var(--space-8);position:relative;overflow:hidden}
+.wl-copy{grid-column:1/7;position:relative;z-index:2}
+.wl h1{font-size:clamp(2.4rem,4.1vw,4.6rem);line-height:.94;margin-bottom:var(--space-5)}
+.wl h1 .line{display:block;white-space:nowrap}
+.wl .sub{font-size:var(--step-1);line-height:1.35;max-width:26ch}
+.wl-shape{position:absolute;left:-8vw;bottom:-2vh;width:62vw;height:26vh;min-height:170px;transform:rotate(-4deg);background:var(--color-you);clip-path:polygon(0 0,100% 0,calc(100% - 4vh) 50%,100% 100%,0 100%);display:flex;align-items:center;padding-left:12vw;z-index:1}
+.wl-shape .emboss{font:800 clamp(22px,3.2vw,52px)/1.05 var(--font-mono);font-stretch:110%;letter-spacing:.06em;text-transform:uppercase;color:var(--color-on-you);text-shadow:0 2px 0 var(--orange-200),0 -2px 0 var(--orange-700);max-width:18ch}
+.form{grid-column:7/13;background:var(--color-panel);border-radius:var(--radius-lg);padding:var(--space-6);display:grid;gap:var(--space-5);position:relative;z-index:3;box-shadow:0 0 0 1px var(--color-line)}
+.form label,.form legend{display:block;font-size:var(--step-0);margin-bottom:var(--space-2)}
+.form .hint{color:var(--color-muted);font-size:var(--step--1);margin-left:var(--space-2)}
+.form input[type=text],.form input[type=email]{width:100%;font:400 var(--step-0) var(--font-body);color:var(--color-text);background:var(--color-ground);border:1px solid var(--color-axis);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);min-height:48px}
+.form input[aria-invalid="true"]{border-color:var(--color-error)}
+.form fieldset{border:0;padding:0;margin:0}
+.opts{display:flex;gap:var(--space-2);flex-wrap:wrap}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label{margin:0;display:inline-flex;align-items:center;min-height:44px;padding:.5em 1.4em .5em .9em;border:1px solid var(--color-axis);border-radius:var(--radius-sm);clip-path:var(--tape);font:700 var(--step--1)/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform 160ms var(--ease-out)}
+.opts label:active{transform:scale(.97)}
+.opts input:checked+label{background:var(--color-model);color:var(--color-on-you);border-color:var(--color-model)}
+.opts input:focus-visible+label{box-shadow:0 0 0 3px var(--color-focus)}
+.consent{display:flex;gap:var(--space-3);align-items:flex-start;font-size:var(--step-0)}
+.consent input{width:22px;height:22px;margin-top:3px;accent-color:var(--color-you);flex:none}
+.err{color:var(--color-error);font-size:var(--step-0);min-height:0;margin-top:var(--space-2)}
+.err:empty{display:none}
+.form .tape{justify-content:center;min-height:56px;font-size:var(--step--1);width:100%}
+.done{display:none;gap:var(--space-4)}
+.done h2{font-size:var(--step-3)}
+.form.sent>:not(.done){display:none}.form.sent .done{display:grid}
+.film{padding:var(--space-9) var(--margin);display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-6);align-items:center}
+.film video,.film .poster{grid-column:2/7;width:100%;aspect-ratio:4/5;border-radius:var(--radius-lg);background:var(--color-panel);object-fit:cover}
+.film .what{grid-column:8/12}
+.film h2{font-size:var(--step-3);margin-bottom:var(--space-5)}
+.film ol{list-style:none;padding:0;display:grid;gap:var(--space-4);counter-reset:w}
+.film li{display:flex;gap:var(--space-4);align-items:flex-start;font-size:var(--step-1);line-height:1.3}
+.film li::before{content:"";flex:none;width:2.2em;height:.9em;margin-top:.22em;background:var(--color-you);clip-path:var(--tape)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);padding:0 var(--margin) var(--space-9)}
+.strip figure{position:relative;aspect-ratio:3/2;border-radius:var(--radius-sm);overflow:hidden}
+.strip img{width:100%;height:100%;object-fit:cover}
+.strip .tape{position:absolute;left:var(--space-3);bottom:var(--space-3)}
+.privacy{padding:0 var(--margin) var(--space-8);color:var(--color-muted);font-size:var(--step--1);max-width:none}
+.privacy p{max-width:80ch;margin-bottom:var(--space-3)}
+@media (max-width:1024px){
+  .wl{grid-template-columns:minmax(0,1fr);padding-top:96px;padding-bottom:var(--space-9)}
+  .wl-copy,.form{grid-column:1}
+  .wl-shape{position:relative;left:auto;bottom:auto;width:auto;height:34vw;min-height:120px;margin:var(--space-2) calc(-1*var(--margin)) var(--space-4);padding-left:calc(var(--margin) + 4vw)}
+  .film{grid-template-columns:minmax(0,1fr)}.film video,.film .poster,.film .what{grid-column:1}
+  .strip{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){.wl h1{font-size:10.4vw}.wl h1 .line{white-space:normal}.strip{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.replace('no-js','js')</script>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Systems for Good">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M4 20h56l-5 12 5 12H4z" fill="#ff4f1f"/><path d="M15 39.5c2 1.6 9 2 9-2.5s-8.5-3.5-8.5-8 7-4 8.5-2.5" fill="none" stroke="#0b1226" stroke-width="3.4" stroke-linecap="round"/><path d="M31 32h14m-5-5 5 5-5 5" fill="none" stroke="#0b1226" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Systems for Good</span>
+  </a>
+  <ul><li><a class="pull" href="#join">Join the waitlist</a></li></ul>
+</header>
+
+<main id="top">
+<section class="wl" id="join" aria-labelledby="h1">
+  <div class="wl-copy">
+    <h1 id="h1"><span class="line">Steer it once.</span><span class="line">Fix it for good.</span></h1>
+    <p class="sub">We're building a way to turn the problem you keep fixing into a model you can run. Join the waitlist and tell us yours.</p>
+  </div>
+  <div class="wl-shape" aria-hidden="true"><span class="emboss" id="emboss">The backlog after every sprint</span></div>
+
+  <form class="form" id="wlForm" novalidate>
+    <div>
+      <label for="problem">What keeps coming back? <span class="hint">Optional. A few words is plenty.</span></label>
+      <input id="problem" name="problem" type="text" maxlength="80" autocomplete="off" placeholder="The backlog after every sprint">
+    </div>
+    <div>
+      <label for="email">Your email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="emailErr" inputmode="email">
+      <p class="err" id="emailErr" aria-live="polite"></p>
+    </div>
+    <fieldset>
+      <legend>Who is it for?</legend>
+      <div class="opts">
+        <input type="radio" name="who" id="w1" value="me" checked><label for="w1">Just me</label>
+        <input type="radio" name="who" id="w2" value="team"><label for="w2">My team</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Personal will be £9.99 a month. Would you pay that once it works for your problem?</legend>
+      <div class="opts">
+        <input type="radio" name="pay" id="p1" value="yes"><label for="p1">Yes</label>
+        <input type="radio" name="pay" id="p2" value="maybe"><label for="p2">Maybe</label>
+        <input type="radio" name="pay" id="p3" value="no"><label for="p3">No</label>
+      </div>
+    </fieldset>
+    <div>
+      <label class="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consentErr"> Email me when it opens. Nothing else, and you can leave any time.</label>
+      <p class="err" id="consentErr" aria-live="polite"></p>
+    </div>
+    <button class="tape" type="submit" id="joinBtn">Join the waitlist <span class="arrow" aria-hidden="true">→</span></button>
+    <p class="err" id="formErr" aria-live="polite"></p>
+    <div class="done" role="status" tabindex="-1" id="done">
+      <h2>You're on the list.</h2>
+      <p>We'll write when your first model is ready to build. Your problem is on the tape; we read every one.</p>
+    </div>
+  </form>
+</section>
+
+<section class="film" aria-labelledby="whatH">
+  <video id="film" muted playsinline loop controls preload="metadata" poster="film-poster.jpg" aria-label="30 seconds: what a run looks like.">
+    <source src="film.mp4" type="video/mp4">
+  </video>
+  <div class="what">
+    <h2 id="whatH">What you'll get first</h2>
+    <ol>
+      <li>A model of your problem, built from your words in about two minutes.</li>
+      <li>Practice runs: guess, run, see the gap.</li>
+      <li>A weekly log that never resets.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="strip" aria-label="Everyone's Monday">
+  <figure><img src="img/wards.webp" alt="A nurse in scrubs walking a ward corridor, pushing a cot." width="800" height="533" loading="lazy"><figcaption class="tape light">Wards</figcaption></figure>
+  <figure><img src="img/depots.webp" alt="A forklift in a timber depot, a worker passing behind it." width="800" height="533" loading="lazy"><figcaption class="tape light">Depots</figcaption></figure>
+  <figure><img src="img/charities.webp" alt="Two people at a wall of sticky notes, one reaching to move a note." width="800" height="533" loading="lazy"><figcaption class="tape light">Charities</figcaption></figure>
+</section>
+
+<footer class="privacy">
+  <p>We keep your email, your answers and where you came from. We use them to run this waitlist and nothing else. Ask us to delete them any time.</p>
+  <p>Photographs from Unsplash: Hush Naidoo Jade Photography, Pickawood, Carine L. Type: Mattone (Collletttivo), Libertinus Sans, Trispace; all OFL.</p>
+  <p>© 2026 Systems for Good. Steer it once. Fix it for good.</p>
+</footer>
+</main>
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
