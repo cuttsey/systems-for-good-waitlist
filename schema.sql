@@ -1,4 +1,4 @@
--- Systems for Good waitlist (E1). Visitors may insert; nobody but the project owner can read.
+-- Morphise waitlist (E1). Visitors may insert; nobody but the project owner can read.
 create table if not exists public.waitlist (
   id bigint generated always as identity primary key,
   created_at timestamptz not null default now(),

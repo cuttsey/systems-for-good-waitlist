@@ -1,12 +1,12 @@
-# Systems for Good: waitlist
+# Morphise: waitlist
 
-The public waitlist page for the desirability test E1 (see EXPERIMENTS.md in the Systems for Good project). Static HTML, served by GitHub Pages. Sign-ups go to a Supabase table that visitors can insert into but never read (`schema.sql`).
+The public waitlist page for the desirability test E1 (see EXPERIMENTS.md in the Morphise project (formerly Systems for Good)). Static HTML, served by GitHub Pages. Sign-ups go to a Supabase table that visitors can insert into but never read (`schema.sql`).
 
 To connect sign-ups, put the project URL and publishable key in `config.js`.
 
 ## Domain
 
-The page is served at https://systemsforgood.org (the `CNAME` file in this repo).
+The page is served at https://morphise.com (the `CNAME` file in this repo).
 
 DNS at your registrar:
 
@@ -22,4 +22,4 @@ DNS at your registrar:
 | AAAA | @ | 2606:50c0:8003::153 |
 | CNAME | www | cuttsey.github.io |
 
-Then in GitHub: Settings → Pages → source `main`, root; custom domain `systemsforgood.org`; tick "Enforce HTTPS" once the certificate is issued.
+Then in GitHub: Settings → Pages → source `main`, root; custom domain `morphise.com`; tick "Enforce HTTPS" once the certificate is issued.
